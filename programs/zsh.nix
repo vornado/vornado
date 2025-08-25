@@ -45,6 +45,10 @@
       */
       ''
         ZVM_INIT_MODE=sourcing
+
+        if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+         . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+        fi
       '';
 
     initExtraBeforeCompInit =
@@ -71,7 +75,7 @@
 
         # keybind to accept auto suggestions
         bindkey '^y' autosuggest-accept
-        source <(fzf --zsh)
+        source <(${lib.getExe pkgs.fzf} --zsh)
 
         export FZF_DEFAULT_COMMAND="${lib.getExe pkgs.fd} --hidden --strip-cwd-prefix --exclude .git"
         export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"

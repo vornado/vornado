@@ -21,6 +21,7 @@
   # environment.
   home.packages = [
     pkgs.fzf
+    pkgs.upterm
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello

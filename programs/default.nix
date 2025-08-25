@@ -1,6 +1,6 @@
 {
   imports = [
-    ./nvim.nix
+    ./neovim
     ./tmux.nix
     ./zsh.nix
   ];

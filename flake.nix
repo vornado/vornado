@@ -8,10 +8,12 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    
+    nixCats.url = "github:BirdeeHub/nixCats-nvim";
   };
 
   outputs =
-    { nixpkgs, home-manager, ... }:
+    { nixpkgs, home-manager, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -26,6 +28,10 @@
 
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
+
+        extraSpecialArgs = {
+	  inherit inputs;
+        };
       };
     };
 }
