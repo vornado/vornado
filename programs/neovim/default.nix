@@ -46,6 +46,7 @@ in {
             nixd
             stylua
             beam27Packages.elixir-ls
+            ast-grep
           ];
  	  kickstart-debug = with pkgs; [
             delve
@@ -81,6 +82,7 @@ in {
             todo-comments-nvim
             mini-nvim
             nvim-treesitter.withAllGrammars
+            grug-far-nvim
             # This is for if you only want some of the grammars
             # (nvim-treesitter.withPlugins (
             #   plugins: with plugins; [
