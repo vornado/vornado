@@ -43,6 +43,7 @@ in {
             stdenv.cc.cc
             nix-doc
             lua-language-server
+            svelte-language-server
             nixd
             stylua
             beam27Packages.elixir-ls
