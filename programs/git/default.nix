@@ -10,8 +10,8 @@
 
     settings = {
       user = {
-        name = "anguye21";
-        email = "qb7j4orb@wussie.anonaddy.com";
+        name = "vornado";
+        email = "andrewcarlson.engr@gmail.com";
       };
 
       alias = let
