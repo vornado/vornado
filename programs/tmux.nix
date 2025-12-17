@@ -9,7 +9,7 @@
     baseIndex = 1;
     escapeTime = 0;
     historyLimit = 50000;
-    terminal = "screen-256color";
+    terminal = "tmux-256color";
     disableConfirmationPrompt = true;
 
     plugins = with pkgs.tmuxPlugins; [
