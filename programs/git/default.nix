@@ -5,6 +5,10 @@
 }: {
   home.shellAliases.g = "git";
 
+  home.packages = [
+    pkgs.git-stack
+  ];
+
   programs.git = {
     enable = true;
 
@@ -13,6 +17,7 @@
         name = "vornado";
         email = "andrewcarlson.engr@gmail.com";
       };
+
 
       alias = let
         toolbelt = pkgs.git-toolbelt;
