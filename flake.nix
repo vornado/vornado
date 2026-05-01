@@ -8,6 +8,8 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    neovim.url = "gitlab:anguye21/neovim-config";
     
     nixCats.url = "github:BirdeeHub/nixCats-nvim";
   };

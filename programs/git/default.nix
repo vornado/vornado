@@ -6,7 +6,7 @@
   home.shellAliases.g = "git";
 
   home.packages = [
-    pkgs.git-stack
+    pkgs.git-spice
   ];
 
   programs.git = {

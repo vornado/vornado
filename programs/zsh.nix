@@ -39,9 +39,10 @@
       }
     ];
 
-    initExtraFirst =
+    initContent = lib.mkMerge [
+      (lib.mkBefore
       /*
-      bash
+      Bash
       */
       ''
         ZVM_INIT_MODE=sourcing
@@ -49,11 +50,12 @@
         if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
          . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
         fi
-      '';
+      '')
 
-    initExtraBeforeCompInit =
+      (lib.mkOrder 550 
+
       /*
-      bash
+      Bash
       */
       ''
         # Enable colors
@@ -61,11 +63,10 @@
 
         # Change prompt
         prompt="%B%F{green}%n%f%b%F{grey}:%f%F{blue}[%f%F{red}%m%f%F{blue}]%f%F{grey}:%f%F{magenta}%~%f"''$'\n'"%B%F{yellow}''$%f%b "
-      '';
+      '')
 
-    initExtra =
       /*
-      bash
+      Bash
       */
       ''
         # Allow editing commands in text editor
@@ -114,7 +115,9 @@
 
         zstyle ':fzf-tab:*' use-fzf-default-opts yes
         zstyle ':fzf-tab:complete:cd:*' fzf-preview '${lib.getExe pkgs.eza} -1 --color=always $realpath'
-      '';
+      ''
+
+    ];
 
     sessionVariables = {
 #     MANPAGER = "v +Man!";
